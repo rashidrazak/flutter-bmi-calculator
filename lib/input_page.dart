@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'reusable_card.dart';
+import 'card_child.dart';
 
 const double bottomContainerHeight = 80.0;
 const Color bottomContainerColor = Color(0xFFEB1555);
@@ -72,55 +74,6 @@ class _InputPageState extends State<InputPage> {
             child: Center(child: Text('CALCULATE')),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class CardChild extends StatelessWidget {
-  final IconData icon;
-  final String label;
-
-  CardChild({@required this.icon, @required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          this.icon,
-          size: 90.0,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          this.label,
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Color(0xFF8D8E98),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  final Color color;
-  final Widget cardChild;
-
-  ReusableCard({@required this.color, this.cardChild});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
-        color: this.color,
       ),
     );
   }
