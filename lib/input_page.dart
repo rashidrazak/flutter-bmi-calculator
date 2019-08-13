@@ -19,49 +19,22 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: new ReusableCard(),
+                    child: ReusableCard(),
                   ),
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Color(0xFF1D1E33),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                    child: ReusableCard(),
             ),
             Expanded(
-              child: Container(
-                margin: EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Color(0xFF1D1E33),
-                ),
-              ),
+              child: ReusableCard(),
             ),
             Expanded(
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Color(0xFF1D1E33),
-                      ),
-                    ),
+                    child: ReusableCard(),
                   ),
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        color: Color(0xFF1D1E33),
-                      ),
-                    ),
+                    child: ReusableCard(),
                   ),
                 ],
               ),
@@ -89,11 +62,3 @@ class ReusableCard extends StatelessWidget {
     );
   }
 }
-
-//Container(
-//margin: EdgeInsets.all(15.0),
-//decoration: BoxDecoration(
-//borderRadius: BorderRadius.circular(10.0),
-//color: Color(0xFF1D1E33),
-//),
-//),
