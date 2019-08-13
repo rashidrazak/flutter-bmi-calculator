@@ -23,6 +23,9 @@ class _InputPageState extends State<InputPage> {
                   ),
                   Expanded(
                     child: ReusableCard(),
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: ReusableCard(),
