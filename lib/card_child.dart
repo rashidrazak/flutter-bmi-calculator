@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 const double iconSize = 90.0;
 const sizedBoxHeight = 15.0;
-const labelTextStyle = TextStyle(
-  fontSize: 20.0,
-  color: Color(0xFF8D8E98),
-);
 
 class CardChild extends StatelessWidget {
   final IconData icon;
@@ -27,7 +24,7 @@ class CardChild extends StatelessWidget {
         ),
         Text(
           this.label,
-          style: labelTextStyle,
+          style: kLabelTextStyle,
         ),
       ],
     );
