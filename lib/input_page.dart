@@ -141,20 +141,25 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            RoundIconButton(),
-                            SizedBox(width: 10.0),
-                            FloatingActionButton(
-                              backgroundColor: Color(0xFF4C4F5E),
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
                               onPressed: () {
-                                print('LOL');
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10.0),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
                               },
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -181,9 +186,15 @@ class _InputPageState extends State<InputPage> {
 }
 
 class RoundIconButton extends StatelessWidget {
+  final IconData icon;
+  final Function onPressed;
+
+  RoundIconButton({@required this.icon, @required this.onPressed});
+
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
+      child: Icon(icon),
       constraints: BoxConstraints.tightFor(
         width: 56.0,
         height: 56.0,
@@ -191,9 +202,7 @@ class RoundIconButton extends StatelessWidget {
       elevation: 6.0,
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),
-      onPressed: () {
-        print('Clicked');
-      },
+      onPressed: onPressed,
     );
   }
 }
