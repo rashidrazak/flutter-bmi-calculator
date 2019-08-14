@@ -16,6 +16,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
+  int height = 180;
+  double minHeight = 120;
+  double maxHeight = 220;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +83,7 @@ class _InputPageState extends State<InputPage> {
                     textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
                       Text(
-                        '166',
+                        height.toString(),
                         style: kNumberTextStyle,
                       ),
                       Text(
@@ -88,6 +91,19 @@ class _InputPageState extends State<InputPage> {
                         style: kLabelTextStyle,
                       ),
                     ],
+                  ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: minHeight,
+                    max: maxHeight,
+                    activeColor: Color(0xFFEB1555),
+                    inactiveColor: Color(0xFF8D8E98),
+                    onChanged: (double newValue) {
+                      print(newValue);
+                      setState(() {
+                        height = newValue.round();
+                      });
+                    },
                   ),
                 ],
               ),
