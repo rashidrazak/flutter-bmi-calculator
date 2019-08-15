@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import 'package:flutter_bmi_calculator/constants.dart';
 
 const double iconSize = 90.0;
 const sizedBoxHeight = 15.0;
