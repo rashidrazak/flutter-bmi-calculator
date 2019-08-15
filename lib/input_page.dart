@@ -4,6 +4,7 @@ import 'reusable_card.dart';
 import 'card_child.dart';
 import 'constants.dart';
 import 'round_icon_button.dart';
+import 'bottom_button.dart';
 
 import 'result_page.dart';
 
@@ -211,34 +212,14 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomButton(),
-        ],
-      ),
-    );
-  }
-}
-
-class BottomButton extends StatelessWidget {
-  final Function onTap;
-  final String buttonTitle;
-
-  BottomButton({@required this.onTap, @required this.buttonTitle});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        color: kBottomContainerColor,
-        margin: EdgeInsets.only(top: 10.0),
-        height: kBottomContainerHeight,
-        width: double.infinity,
-        child: Center(
-          child: Text(
-            buttonTitle,
-            style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w700),
+          BottomButton(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultPage()));
+            },
+            buttonTitle: 'CALCULATE',
           ),
-        ),
+        ],
       ),
     );
   }
